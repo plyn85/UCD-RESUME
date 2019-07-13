@@ -79,6 +79,9 @@ header {
     color: #fff;
 }
 
+.bg-color-three-reasons{
+    background-color: white;
+}
 /*overrides the bootstrap css*/
 
 .list-inline-item:not(:last-child) {
