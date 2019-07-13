@@ -21,6 +21,25 @@
     background-color: #525252;
 }
 
+/*-------------------------------Special paddings/margins/texts*/
+
+h1,
+h2,
+h3,
+h4 {
+    margin: 0;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.general-sub {
+    font-family: "Exo", sans-serif;
+    font-weight: 300;
+    color: #fafafa;
+}
+
 /*-------------------------------header*/
 
 header {
@@ -72,7 +91,11 @@ header {
     font-size: 0;
 }
 
-/*has to be applied to give elements back there font-size otherwise they will nt be displayed*/
+#nav {
+    margin: 0;
+}
+
+/*has to be applied to give elements back there font-size otherwise they will not be displayed*/
 
 #nav li {
     font-size: 14px;
@@ -99,13 +122,79 @@ header {
     font-size: 26px;
 }
 
-.menu-item span{
+.menu-item span {
     display: block;
+    width: 100%;
     padding-top: 5px;
     text-align: center;
     text-transform: uppercase;
     font-size: 14px;
     font-weight: 300;
     letter-spacing: 2px;
+}
 
+/*-------------------------------hover.css*/
+
+.hvr-sweep-to-bottom:before {
+    background-color: rgba(0, 0, 0, 0.2);
+    transition-duration: .6s;
+    height: 120px;
+}
+
+/*-------------------------------footer*/
+
+footer {
+    background-color: #525252;
+    color: #fafafa;
+    min-height: 120px;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.cv-pdf i {
+    font-size: 18px;
+    color: #fafafa;
+    text-align: center;
+    padding-left: 5px;
+    transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -webkit-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
+}
+
+.cv-pdf i:hover {
+    color: #e84610;
+}
+
+.social-links {
+    padding-bottom: 15px;
+
+}
+
+/*---reuse for project----*/
+.social-links li a i {
+    width: 32px;
+    height: 32px;
+    padding: 12px 0;
+    border-radius: 50%;
+    font-size: 13px;
+    line-height: 7px;
+    text-align: center;
+    color: #fafafa;
+    background: #8f8f8f;
+    transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -webkit-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
+
+}
+
+.social-links li a i:hover {
+    background: #e84610;
+}
+
+#footer-details {
+    padding: 20px;
 }
