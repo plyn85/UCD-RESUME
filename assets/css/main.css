@@ -9,6 +9,10 @@
     background-color: #fff;
 }
 
+.bg-color-personal-info {
+    background-color: #e1e1e1;
+}
+
 .ui-menu-color-home {
     background-color: #e67e32;
 }
@@ -22,7 +26,7 @@
 }
 
 .ui-menu-color-download {
-    background-color: #525252;
+    background-color: #e7e1e1;
 }
 
 /*-------------------------------Special paddings/margins/texts*/
@@ -166,6 +170,9 @@ header {
     height: 120px;
 }
 
+/*-------------------------------Personal info*/
+
+
 /*-------------------------------footer*/
 
 footer {
@@ -224,7 +231,7 @@ footer {
     padding: 20px;
 }
 
-/*-----------three-reasons*/
+/*------------------------------------three-reasons*/
 
 .three-reasons-icon {
     font-size: 26px;
@@ -233,4 +240,43 @@ footer {
 
 .three-reasons-heading {
     margin-bottom: 15px;
+}
+
+/*--------------------------------Personal Info-*/
+
+.personal-info-item {
+
+    margin-bottom: 20px;
+    display: block;
+    clear: both;
+}
+
+/*---inline block allows me to oput two divs side by side-----*/
+.personal-info-item .key,
+.personal-info-item .value {
+    padding-right: 8px;
+    display: inline-block;
+
+}
+
+.personal-info-item .key p,
+.personal-info-item .value p {
+    margin: 0;
+}
+
+.personal-info-item .key {
+    width: 30%;
+    margin-right: 21px;
+    padding-top: 2px;
+    vertical-align: top;
+}
+
+.personal-info-item .value {
+    position: relative;
+    width: 60%;
+
+}
+
+.personal-info-item .key p {
+    font-weight: 700;
 }
