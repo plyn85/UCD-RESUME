@@ -2,7 +2,7 @@
 function fetchGitHubInformation(event) {
   //var added here for username value(what goes inside the box)
   var username = $("#gh-username").val();
-  //if theres noting inside the box enter a this h2 in the div just below the box
+  //if theres noting inside the box enter a  h2 element  in the div just below the box
   if (!username) {
     $("#gh-user-data").html(`<h2>Please enter a GitHub username</h2>`);
     return;
@@ -14,7 +14,12 @@ function fetchGitHubInformation(event) {
         </div>`
   );
 
-  $.when($.getJSON(`https://api.github.com/${username}`)).then(
+  //Promises
+  //$when(we got a response from the GitHub API )
+  //.then (function to display in thr gh-user-data-div)
+  //unless we get an error!is whats happening below
+  //when method takes get jason function as its first argument
+  $.when($.getJSON(`https://api.github.com/users/${username}`)).then(
     function(response) {
       var userData = response;
       $("#gh-user-data").html(userInfomationHTML(userData));
