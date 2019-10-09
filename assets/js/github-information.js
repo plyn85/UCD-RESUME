@@ -36,7 +36,8 @@ function repoInformationHTML(repos) {
 </li>
     `;
   });
-  return `<div class="clearfix repo-list">
+  return `<div class="clearfix repo-list">'
+
   <p><strong>Repo List:</strong></p>
   <ul>${listItemsHTML.join("\n")}</ul></div>
   `;
@@ -74,9 +75,18 @@ function fetchGitHubInformation(event) {
       $("#gh-user-data").html(userInformationHTML(userData));
       $("#gh-repo-data").html(repoInformationHTML(repoData));
     },
+    //404 means not found and 403 means forbbidden
+    //adding the second else if statment because github has a limt on how may request u can make in a given time frame
+    //X-RateLimit-Reset this is a header thats provided by git hub to let us know when our quota will be reset
+    // to get it into a format we can read, we need to multiply it by 1000 and then turn it into a date object.
     function(errorResponse) {
       if (errorResponse.status === 404) {
         $("#gh-user-data").html(`<h2>No info found for user ${username}</h2>`);
+      } else if (errorResponse.status === 403) {
+        var resetTime = new Date(
+          errorResponse.getResponseHeader("X-RateLimit-Reset") * 1000
+        );
+        $("#gh-user-data").html(resetTime);
       } else {
         console.log(errorResponse);
         $("#gh-user-data").html(
