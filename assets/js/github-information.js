@@ -14,23 +14,32 @@ function userInformationHTML(user) {
           <p>Followers: ${user.followers} - Following ${user.following} <br> Repos: ${user.public_repos}</p>
       </div>`;
 }
-
+//if theres no username in box display the <h2> in user data div
 function fetchGitHubInformation(event) {
   var username = $("#gh-username").val();
   if (!username) {
     $("#gh-user-data").html(`<h2>Please enter a GitHub username</h2>`);
     return;
   }
-
+  //or else dispaly laoding gif
   $("#gh-user-data").html(
     `<div id="loader">
           <img src="assets/css/loader.gif" alt="loading..." />
       </div>`
   );
-
-  $.when($.getJSON(`https://api.github.com/users/${username}`)).then(
-    function(response) {
-      var userData = response;
+  //fetch json data from git hub server
+  //response is passed into function above
+  //two get json calls means too responses in our functions
+  //when we have two responses the when method makes each response an array
+  //each will be the first element of the array
+  $.when($.getJSON(`https://api.github.com/users/${username}`));
+  $.getJSON("https//api.github.com/users/${username}/repos").then(
+    function(firstResponse, secondResponse) {
+      var userData = firstResponse;
+      [0];
+      var repoData = secondResponse;
+      [0];
+      $("#gh-user-data").html(userInformationHTML(userData));
       $("#gh-user-data").html(userInformationHTML(userData));
     },
     function(errorResponse) {
