@@ -14,6 +14,20 @@
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
     <link rel="stylesheet" href="assets\css\main.css" type="text/css">
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.0/dist/email.min.js">
+</script>
+<script type="text/javascript">
+
+ 
+//contacing contact file to email JS service
+    (function() {
+            emailjs.init("user_erNrbyJ0rsTRnhVpZmFAK")
+           
+
+        })();
+</script>
+
 </head>
 
 <body>
@@ -67,7 +81,8 @@
                 <h3 class="contact-heading upppercase text-center">Got a project in mind?</h3>
                 <h5 class="text-center uppercase">Let's work together!</h5>
                 <div class="center-form">
-                    <form>
+                    <!-- adding function to form elememt here so emails can be sent to my account this refers to this form -->
+                    <form submit="return sendMail(this);">
                         <input type="text" name="name" id="fullname" class="form-control" placeholder="Name" required />
                         <input type="email" name="email" id="emailaddress" class="form-control" placeholder="Email"
                             requried />
@@ -127,7 +142,9 @@
 
 
     </footer>
+<script src="assets/js/sendEmail.js">
 
+</script>
 </body>
 
 </html>

@@ -83,3 +83,4 @@ function fetchGitHubInformation(event) {
 }
 
 $(document).ready(fetchGitHubInformation);
+// emailjs.send("gmail", "bl_ank");
